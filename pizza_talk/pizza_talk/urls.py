@@ -19,8 +19,10 @@ from django.conf.urls import include
 from . import views
 
 urlpatterns = [
+    path('', views.HomePage.as_view(), name ='home'),
+    path('test/', views.LoggedInPage.as_view(), name='test'),
+    path('thanks/', views.LoggedOutPage.as_view(), name='thanks'),
     path('admin/', admin.site.urls),
-    path('', views.HomePage.as_view(), name ="home"),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
